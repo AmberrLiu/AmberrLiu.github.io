@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beibei Su (苏贝贝) - Homepage</title>
+<meta name="description" content="Beibei Su (苏贝贝) — Multimodal understanding & computer vision algorithm engineer. Kuaishou MMU · Northwestern University · Zhejiang University.">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta property="og:title" content="Beibei Su (苏贝贝) - Homepage">
+<meta property="og:description" content="Multimodal understanding & computer vision algorithm engineer with 9 years of experience. Kuaishou MMU · Northwestern · Zhejiang University.">
+<meta property="og:type" content="profile">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232a4a8b'/><text x='50' y='70' font-size='56' font-family='Georgia,serif' fill='white' text-anchor='middle'>S</text></svg>">
+<style>
+  :root {
+    --bg: #ffffff;
+    --panel: #ffffff;
+    --fg: #23282d;
+    --fg-soft: #4f5a65;
+    --fg-faint: #8b95a1;
+    --line: #e4e7ec;
+    --accent: #2a4a8b;
+    --accent-soft: #eef2fb;
+    --venue: #2a4a8b;
+    --maxw: 1180px;
+  }
+  html[data-theme="dark"] {
+    --bg: #14171c;
+    --panel: #1b1f26;
+    --fg: #e6e9ee;
+    --fg-soft: #aab3c0;
+    --fg-faint: #7b8595;
+    --line: #2a2f38;
+    --accent: #7fa5f5;
+    --accent-soft: #1e2635;
+    --venue: #7fa5f5;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ---------- top bar ---------- */
+  .topbar {
+    position: sticky; top: 0; z-index: 60;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar-inner {
+    max-width: var(--maxw); margin: 0 auto;
+    padding: 9px 28px; display: flex; align-items: center; gap: 16px;
+  }
+  .brand { font-weight: 700; letter-spacing: -.01em; margin-right: auto; font-size: 15.5px; }
+  .navlinks { display: flex; gap: 17px; }
+  .navlinks a { color: var(--fg-soft); font-size: 14px; }
+  .navlinks a:hover { color: var(--accent); text-decoration: none; }
+  .btn {
+    border: 1px solid var(--line); background: var(--panel); color: var(--fg-soft);
+    border-radius: 999px; padding: 4px 12px; font-size: 13px; font-family: inherit;
+    cursor: pointer; line-height: 1.6; transition: .15s ease; white-space: nowrap;
+  }
+  .btn:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ---------- two-column shell ---------- */
+  .shell {
+    max-width: var(--maxw); margin: 0 auto;
+    padding: 44px 28px 90px;
+    display: grid; grid-template-columns: 300px 1fr; gap: 56px;
+    align-items: start;
+  }
+
+  /* ---------- sidebar ---------- */
+  .side { position: sticky; top: 78px; text-align: center; }
+  .avatar-wrap {
+    width: 200px; height: 200px; margin: 0 auto 20px;
+    border-radius: 50%; overflow: hidden;
+    border: 1px solid var(--line);
+    background: linear-gradient(145deg, #2a4a8b, #46699f);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .avatar-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .monogram { color: #fff; font: 600 76px/1 Georgia, "Times New Roman", serif; letter-spacing: 2px; }
+  .side h1 { font-size: 25px; margin: 0 0 2px; letter-spacing: -.015em; }
+  .side .cn { font-size: 17px; color: var(--fg-soft); margin: 0 0 12px; }
+  .side .affil { font-size: 14px; color: var(--fg-soft); line-height: 1.6; margin: 0 0 18px; }
+  .side .affil strong { color: var(--fg); font-weight: 600; }
+  .contact { list-style: none; padding: 0; margin: 0 0 18px; font-size: 14px; }
+  .contact li { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 3px 0; color: var(--fg-soft); }
+  .contact .ico { width: 16px; flex: none; color: var(--fg-faint); }
+  .side-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .side-actions .btn { background: var(--accent-soft); border-color: transparent; color: var(--accent); font-weight: 500; }
+  .side-actions .btn:hover { border-color: var(--accent); }
+
+  /* ---------- sections ---------- */
+  main { min-width: 0; }
+  section { scroll-margin-top: 74px; margin-bottom: 46px; }
+  section h2 {
+    font-size: 21px; font-weight: 700; letter-spacing: -.01em;
+    margin: 0 0 18px; padding-bottom: 8px; border-bottom: 1px solid var(--line);
+  }
+  section p { margin: 0 0 14px; color: var(--fg-soft); }
+  section p strong { color: var(--fg); font-weight: 600; }
+
+  /* about */
+  #about h2 { border: none; padding: 0; margin-bottom: 10px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
+  .chip {
+    font-size: 12.5px; padding: 3px 11px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent); border: 1px solid transparent;
+  }
+
+  /* simple lists (education / experience) */
+  .plainlist { list-style: none; padding: 0; margin: 0; }
+  .plainlist > li {
+    display: grid; grid-template-columns: 150px 1fr; gap: 18px;
+    padding: 11px 0; border-bottom: 1px dashed var(--line);
+  }
+  .plainlist > li:last-child { border-bottom: none; }
+  .when { color: var(--fg-faint); font-size: 13.5px; font-variant-numeric: tabular-nums; padding-top: 2px; }
+  .what .org { font-weight: 600; }
+  .what .role { color: var(--fg-soft); font-size: 14.5px; }
+  .what ul { margin: 6px 0 0; padding-left: 18px; color: var(--fg-soft); font-size: 14.5px; }
+  .what ul li { margin: 2px 0; }
+  .badge-now {
+    display: inline-block; margin-left: 8px; font-size: 11.5px; font-weight: 600;
+    color: #17803d; background: #e6f6ec; border-radius: 999px; padding: 0 8px; vertical-align: 2px;
+  }
+  html[data-theme="dark"] .badge-now { color: #6fdc96; background: #10301d; }
+
+  /* news */
+  .news { list-style: none; padding: 0; margin: 0; font-size: 15px; }
+  .news li { padding: 5px 0; color: var(--fg-soft); }
+  .news .date { color: var(--fg-faint); font-size: 13.5px; margin-right: 8px; font-variant-numeric: tabular-nums; }
+
+  /* project cards */
+  .proj {
+    display: grid; grid-template-columns: 210px 1fr; gap: 22px;
+    padding: 20px 0; border-bottom: 1px solid var(--line);
+  }
+  .proj:last-child { border-bottom: none; }
+  .pbox {
+    align-self: start;
+    border: 1px solid var(--line); border-radius: 8px; overflow: hidden;
+    background: var(--panel);
+  }
+  .pbox .pvenue {
+    background: var(--venue); color: #fff; font-size: 12.5px; font-weight: 600;
+    padding: 4px 10px; letter-spacing: .02em;
+  }
+  html[data-theme="dark"] .pbox .pvenue { color: #10141b; }
+  .pbox .pmeta { padding: 9px 11px; font-size: 12.5px; color: var(--fg-soft); line-height: 1.6; }
+  .pbox .pmeta div + div { margin-top: 5px; }
+  .pbox .pmeta .k { color: var(--fg-faint); }
+  .proj h3 { margin: 0 0 4px; font-size: 16.5px; line-height: 1.5; }
+  .proj .prole { font-size: 13.5px; color: var(--fg-faint); margin-bottom: 8px; }
+  .proj .pgoal { font-size: 14.5px; color: var(--fg-soft); margin: 0 0 8px; }
+  .proj ul { margin: 0; padding-left: 18px; font-size: 14.5px; color: var(--fg-soft); }
+  .proj ul li { margin: 3px 0; }
+  .proj .chips { margin-top: 11px; }
+
+  /* skills */
+  .skillgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+  .skillbox h3 { margin: 0 0 8px; font-size: 14px; color: var(--fg-faint); font-weight: 650; letter-spacing: .04em; text-transform: uppercase; }
+
+  footer {
+    border-top: 1px solid var(--line); padding: 22px 28px 40px;
+    max-width: var(--maxw); margin: 0 auto;
+    color: var(--fg-faint); font-size: 13px;
+    display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between;
+  }
+
+  @media (max-width: 900px) {
+    .shell { grid-template-columns: 1fr; gap: 34px; padding: 30px 20px 70px; }
+    .side { position: static; }
+    .navlinks { display: none; }
+    .proj { grid-template-columns: 1fr; gap: 12px; }
+    .pbox { max-width: 260px; }
+    .plainlist > li { grid-template-columns: 1fr; gap: 2px; }
+    .when { order: 2; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="brand" data-t="brand">Beibei Su</span>
+    <nav class="navlinks">
+      <a href="#about" data-t="nav.about">About</a>
+      <a href="#education" data-t="nav.edu">Education</a>
+      <a href="#experience" data-t="nav.exp">Experience</a>
+      <a href="#projects" data-t="nav.proj">Projects</a>
+      <a href="#research" data-t="nav.res">Research</a>
+      <a href="#skills" data-t="nav.skills">Skills</a>
+    </nav>
+    <button class="btn" id="langBtn">中文</button>
+    <button class="btn" id="themeBtn" aria-label="Toggle theme">◐</button>
+  </div>
+</div>
+
+<div class="shell">
+  <aside class="side">
+    <div class="avatar-wrap">
+      <img src="avatar.jpg" alt="" onerror="this.remove();document.getElementById('mono').hidden=false">
+      <span class="monogram" id="mono" hidden>BS</span>
+    </div>
+    <h1 data-t="name">Beibei Su</h1>
+    <p class="cn" data-t="nameCn">苏贝贝</p>
+    <p class="affil" data-t="affil"></p>
+    <ul class="contact">
+      <li><span class="ico">✉</span><a id="mailLink" href="#"><span id="mailText">email</span></a></li>
+      <li><span class="ico">⚲</span><span data-t="location">Beijing, China</span></li>
+    </ul>
+    <div class="side-actions">
+      <a class="btn" id="cvLink" href="#" data-t="cv">CV on request</a>
+    </div>
+  </aside>
+
+  <main>
+    <section id="about">
+      <h2><span data-t="h.about">About Me</span></h2>
+      <div id="aboutBody"></div>
+      <div class="chips" id="chips"></div>
+    </section>
+
+    <section id="news">
+      <h2>🔥 <span data-t="h.news">Highlights</span></h2>
+      <ul class="news" id="newsList"></ul>
+    </section>
+
+    <section id="education">
+      <h2>📖 <span data-t="h.edu">Education</span></h2>
+      <ul class="plainlist" id="eduList"></ul>
+    </section>
+
+    <section id="experience">
+      <h2>💻 <span data-t="h.exp">Work Experience</span></h2>
+      <ul class="plainlist" id="expList"></ul>
+    </section>
+
+    <section id="projects">
+      <h2>📝 <span data-t="h.proj">Selected Projects</span></h2>
+      <div id="projList"></div>
+    </section>
+
+    <section id="research">
+      <h2>🔬 <span data-t="h.res">Research Experience</span></h2>
+      <ul class="plainlist" id="resList"></ul>
+    </section>
+
+    <section id="skills">
+      <h2>🛠 <span data-t="h.skills">Skills</span></h2>
+      <div class="skillgrid" id="skillList"></div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <span>© <span id="year"></span> <span data-t="name">Beibei Su</span></span>
+  <span data-t="footer"></span>
+</footer>
+
+<script>
+const MAIL = ["redpansyliu", "gmail.com"];
+
+const DATA = {
+  zh: {
+    brand: "苏贝贝",
+    name: "苏贝贝",
+    nameCn: "Beibei Su",
+    affil: "<strong>快手 MMU 多媒体理解部</strong><br>多模态理解算法工程师",
+    location: "中国 · 北京",
+    cv: "完整简历请邮件索取",
+    footer: "个人主页 · 依据 2024 版简历生成",
+    h: { about: "关于我", news: "亮点", edu: "教育背景", exp: "工作经历", proj: "代表项目", res: "研究经历", skills: "技能" },
+    nav: { about: "关于", edu: "教育", exp: "经历", proj: "项目", res: "研究", skills: "技能" },
+    about: [
+      "我是苏贝贝，目前在<strong>快手总部 MMU 多媒体理解部（内容理解中台）</strong>担任多模态理解算法工程师并带领团队，在多模态与计算机视觉领域有约 <strong>9 年</strong>工作经验。",
+      "我的工作聚焦两条主线：一是主导建设业界领先的<strong>多模态短视频与用户理解体系</strong>，覆盖视频分类、视频标签、多模态表征与大模型生成式任务；二是设计创新的<strong>推荐侧建模方案</strong>，把内容理解能力转化为搜广推核心指标增长，影响亿级活跃用户的实际体验。",
+      "在此之前，我在<strong>阿里巴巴 / 斑马网络</strong>做自动辅助驾驶的视觉感知，在<strong>海康威视</strong>做视频监控智能算法。我在<strong>美国西北大学</strong>获得电气工程硕士学位（方向：计算机视觉），本科毕业于<strong>浙江大学竺可桢荣誉学院</strong>。",
+      "欢迎就多模态理解、表征学习、LLM 与推荐结合等方向交流合作，可通过邮件联系我。"
+    ],
+    chips: ["多模态理解", "视频表征学习", "LLM × 推荐", "计算机视觉", "内容理解中台"],
+    news: [
+      { date: "2024.03", t: "作为大模型侧主 R，启动并落地基于 LLM 的跨域用户理解项目，拿到商业化核心指标增长。" },
+      { date: "2023.12", t: "提出业界首个面向质量画风理解的多模态连续表征，与推荐系统联合建模拿到次留显著增长。" },
+      { date: "2023.03", t: "在快手完成一次晋升，连续两年年度绩效「优」。" },
+      { date: "2021.10", t: "主导多路召回视频细粒度标签体系建设，在推荐、新回、Push 等业务拿到 DAU 增长。" }
+    ],
+    education: [
+      { when: "2012.09 – 2014.05", org: "美国西北大学 Northwestern University", role: "电气工程 硕士 · 方向：计算机视觉", bullets: [] },
+      { when: "2008.09 – 2012.06", org: "浙江大学 · 竺可桢荣誉学院（前身浙大混合班）", role: "工学学士 · 信息与通信工程",
+        bullets: ["获浙江大学外语学院英语专业辅修证书", "获浙江大学竺可桢学院荣誉证书"] }
+    ],
+    experience: [
+      { when: "2021.06 – 至今", now: true, org: "快手总部，北京", role: "MMU 多媒体理解部（内容理解中台）· 多模态理解算法工程师",
+        bullets: [
+          "带领团队，连续两年年度绩效「优」，2023 年 3 月完成一次晋升",
+          "主导建设业界领先的多模态短视频与用户理解体系：视频分类、视频标签、多模态表征、大模型生成式任务",
+          "设计创新的推荐侧建模方案，提升搜广推核心指标，影响亿级活跃用户体验"
+        ] },
+      { when: "2018.05 – 2021.05", org: "阿里巴巴集团 · 阿里云 · 斑马网络，上海", role: "视觉感知算法部 · 高级算法工程师",
+        bullets: [
+          "辅助驾驶车外视觉：独立负责停车位检测模块的算法选型、开发与效果优化",
+          "面向车内 DMS 的表情识别网络（预研）"
+        ] },
+      { when: "2016.10 – 2017.11", org: "易居中国 · 克而瑞研究院，上海", role: "流媒体技术部 · 图像视频算法工程师",
+        bullets: [
+          "独立设计并完成手机端直播推流的 CV 功能，包括实时视频流美颜、滤镜",
+          "根据业务需求调研图像算法，完善视频图像处理模块"
+        ] },
+      { when: "2015.05 – 2016.09", org: "海康威视数字股份有限公司 · 上海研发分公司", role: "智能算法部 · 视频图像算法工程师",
+        bullets: [
+          "独立设计、开发、优化并维护视频监控智能组件（C/C++），包括多帧车牌识别、多目标跟踪",
+          "多帧车牌识别作为交通行业监控产品核心组件，完成基线版本优化，显著提升识别率、准确率、捕获率与耗时",
+          "独立设计车牌识别区域自动生成模块，提升识别调用效率，在 TX1 等平台准确率达 99.98%"
+        ] },
+      { when: "2014.08 – 2015.03", org: "强生中国总部，上海", role: "管理培训生", bullets: [] }
+    ],
+    projects: [
+      { venue: "快手 · 2024", scene: "广告推荐、短视频推荐", stack: "LLM · 指令微调",
+        title: "基于大语言模型的跨域用户理解", role: "主 R（项目负责人）· 2024.03 – 2024.08",
+        goal: "利用大语言模型的推理与涌现能力，对行为稀疏的低活用户做消费能力画像，并拿到商业化核心指标增长。",
+        work: [
+          "作为大模型侧主 R，从 0 到 1 设计、实现并落地整套跨域用户画像推理方案",
+          "技术选型：对比多种 LLM × 推荐的主流范式，结合业务场景确定最佳方案",
+          "整合用户站内全域行为特征（视频、广告、电商、直播、评论等多域信号）",
+          "用指令微调后的 LLM 对特定域内行为稀疏的用户做消费能力推理，并设计配套评测指标",
+          "以隐式表征方式与推荐系统联合建模，拿到预期花费等核心商业化指标增长"
+        ],
+        tags: ["LLM", "指令微调", "用户画像", "跨域建模", "广告推荐"] },
+      { venue: "快手 · 2023–", scene: "短视频推荐、广告、搜索", stack: "多模态表征学习",
+        title: "基于多模态理解的视频画风连续表征", role: "主 R（项目负责人）· 2023.12 – 至今",
+        goal: "质量画风维度的特征信号稀疏且有偏，个性化建模困难。创新性提出业界首个质量理解的多模态 Embedding，与推荐系统联合实现画风偏好的个性化建模。",
+        work: [
+          "基于 encoder-decoder 结构的多目标学习，在质量画风特征空间学习多模态连续表征",
+          "设计回查指标（内容多样性 & 画风一致性），量化证明方案能有效收敛到质量画风空间并具备信息增益",
+          "与推荐算法联合建模用户画风偏好，拿到置信的次留等核心指标显著增长"
+        ],
+        tags: ["多模态表征", "Encoder-Decoder", "表征学习", "次留提升"] },
+      { venue: "快手 · 2021–23", scene: "短视频推荐、新回用户推荐", stack: "多路召回",
+        title: "基于多路召回技术的视频细粒度标签", role: "主 R（项目负责人）· 2021.10 – 2023.11",
+        goal: "视频分类粒度过粗，不足以满足业务的精细化内容理解需求。",
+        work: [
+          "融合多模态生成、多模态分类、多模态检索与文本抽取的多路召回标签技术，对视频内容主题做细粒度理解",
+          "在快手推荐、新回、Push 等业务拿到 DAU 等核心指标增长"
+        ],
+        tags: ["多路召回", "多模态分类", "多模态检索", "视频标签", "DAU 增长"] }
+    ],
+    research: [
+      { when: "2013.03 – 2013.05", org: "视觉变换 / 3D 重建", role: "西北大学 课题项目",
+        bullets: ["基于同一物体的若干输入视角图像，设计 3-step 算法合成全新视角的物体图像", "使用 MATLAB 实现并在多组图像上测试，获得高接受度结果"] },
+      { when: "2013.03 – 2013.05", org: "Local Band-limited Contrast on Texture Images", role: "西北大学 硕士毕业项目",
+        bullets: ["用 MATLAB 复现 Eli Peli 论文《Local Band-limited Contrast in Complex Images》中的对比度理论", "在不同类别图像上测试该理论，记录各频带平均对比度直方图", "发现纹理图像的对比度分布与纹理特征之间的相关性"] },
+      { when: "2011.09 – 2012.05", org: "海洋浮游生物图像分类", role: "浙江大学 毕业论文",
+        bullets: ["基于优化的特征识别、特征分析与分类器完成浮游生物图像分类", "与传统 PCA 分析方法对比，识别率达 91.3%"] }
+    ],
+    skills: [
+      { h: "研究方向", t: ["多模态理解", "视频理解", "表征学习", "LLM × 推荐", "计算机视觉", "目标检测与跟踪"] },
+      { h: "工程能力", t: ["Python", "C++", "MATLAB", "OpenCV"] },
+      { h: "语言", t: ["中文（母语）", "英语（精通读写与口语）"] }
+    ]
+  },
+
+  en: {
+    brand: "Beibei Su",
+    name: "Beibei Su",
+    nameCn: "苏贝贝",
+    affil: "<strong>MMU, Kuaishou</strong><br>Multimodal Understanding Algorithm Engineer",
+    location: "Beijing, China",
+    cv: "Full CV on request",
+    footer: "Personal homepage · generated from the 2024 résumé",
+    h: { about: "About Me", news: "Highlights", edu: "Education", exp: "Work Experience", proj: "Selected Projects", res: "Research Experience", skills: "Skills" },
+    nav: { about: "About", edu: "Education", exp: "Experience", proj: "Projects", res: "Research", skills: "Skills" },
+    about: [
+      "I am Beibei Su (苏贝贝), a multimodal understanding algorithm engineer and team lead at the <strong>MMU Multimedia Understanding Department (Content Understanding Platform) of Kuaishou</strong>, with around <strong>9 years</strong> of experience in multimodal learning and computer vision.",
+      "My work follows two threads: building an industry-leading <strong>multimodal short-video and user understanding stack</strong> — video classification, tagging, multimodal representation and LLM generative tasks — and designing novel <strong>recommendation-side modeling schemes</strong> that turn content understanding into measurable gains in search, ads and recommendation for hundreds of millions of active users.",
+      "Before Kuaishou I worked on ADAS visual perception at <strong>Alibaba / Banma Network</strong> and on video-surveillance intelligence at <strong>Hikvision</strong>. I received my M.S. in Electrical Engineering (computer vision) from <strong>Northwestern University</strong> and my B.Eng. from the <strong>Chu Kochen Honors College, Zhejiang University</strong>.",
+      "If you are interested in multimodal understanding, representation learning or LLM-powered recommendation, feel free to reach out by email."
+    ],
+    chips: ["Multimodal Understanding", "Video Representation Learning", "LLM × RecSys", "Computer Vision", "Content Understanding Platform"],
+    news: [
+      { date: "Mar 2024", t: "Kicked off and shipped LLM-based cross-domain user understanding as LLM-side owner, delivering growth in core monetization metrics." },
+      { date: "Dec 2023", t: "Proposed the first multimodal continuous representation for video quality & style understanding in the industry; joint modeling with the recommender lifted next-day retention significantly." },
+      { date: "Mar 2023", t: "Promoted at Kuaishou; rated “Excellent” in annual performance two years in a row." },
+      { date: "Oct 2021", t: "Led the fine-grained video tagging system built on multi-channel retrieval, driving DAU gains across recommendation, returning-user and push scenarios." }
+    ],
+    education: [
+      { when: "Sep 2012 – May 2014", org: "Northwestern University, USA", role: "M.S. in Electrical Engineering · Focus: Computer Vision", bullets: [] },
+      { when: "Sep 2008 – Jun 2012", org: "Zhejiang University · Chu Kochen Honors College", role: "B.Eng. in Information & Communication Engineering",
+        bullets: ["Minor certificate in English, School of International Studies", "Chu Kochen Honors College certificate"] }
+    ],
+    experience: [
+      { when: "Jun 2021 – Present", now: true, org: "Kuaishou Headquarters, Beijing", role: "MMU Multimedia Understanding (Content Understanding Platform) · Multimodal Understanding Algorithm Engineer",
+        bullets: [
+          "Lead a team; rated “Excellent” in annual performance two years in a row; promoted in Mar 2023",
+          "Built an industry-leading multimodal understanding stack for short videos and users: classification, tagging, multimodal representation and LLM generative tasks",
+          "Designed novel recommendation-side modeling schemes that lifted core search / ads / recsys metrics for hundreds of millions of active users"
+        ] },
+      { when: "May 2018 – May 2021", org: "Alibaba Group · Alibaba Cloud · Banma Network, Shanghai", role: "Visual Perception Algorithm Dept. · Senior Algorithm Engineer",
+        bullets: [
+          "ADAS exterior vision: solely owned algorithm selection, development and tuning of the parking-slot detection module",
+          "Facial expression recognition network for in-cabin DMS (research prototype)"
+        ] },
+      { when: "Oct 2016 – Nov 2017", org: "E-House China · CRIC Research, Shanghai", role: "Streaming Media Technology Dept. · Image & Video Algorithm Engineer",
+        bullets: [
+          "Independently designed and shipped mobile live-streaming CV features, including real-time beautification and filters",
+          "Researched image algorithms against product needs and extended the video processing module"
+        ] },
+      { when: "May 2015 – Sep 2016", org: "Hikvision, Shanghai R&D", role: "Intelligent Algorithm Dept. · Video & Image Algorithm Engineer",
+        bullets: [
+          "Owned design, development, optimization and maintenance of video surveillance components in C/C++, including multi-frame license plate recognition and multi-object tracking",
+          "Optimized the baseline of the multi-frame plate recognition component — a core module of the traffic surveillance product — significantly improving recognition rate, precision, capture rate and latency",
+          "Designed an automatic plate-region generation module that improved recognition throughput, reaching 99.98% accuracy on platforms such as TX1"
+        ] },
+      { when: "Aug 2014 – Mar 2015", org: "Johnson & Johnson China HQ, Shanghai", role: "Management Trainee", bullets: [] }
+    ],
+    projects: [
+      { venue: "Kuaishou · 2024", scene: "Ads & short-video recommendation", stack: "LLM · Instruction tuning",
+        title: "Cross-domain User Understanding with Large Language Models", role: "Project Owner · Mar 2024 – Aug 2024",
+        goal: "Use the reasoning and emergent abilities of LLMs to profile the spending capacity of low-activity users with sparse behavior, and turn it into monetization metric gains.",
+        work: [
+          "As LLM-side owner, designed, implemented and shipped the entire cross-domain user profiling pipeline from scratch",
+          "Benchmarked mainstream LLM × RecSys paradigms and tailored the best-fit design for the business scenario",
+          "Unified full-site behavioral signals across domains (video, ads, e-commerce, livestream, comments)",
+          "Applied an instruction-tuned LLM to infer spending capacity for users sparse in a target domain, with a purpose-built evaluation protocol",
+          "Co-modeled with the recommender via implicit representations, delivering growth in core monetization metrics such as expected spend"
+        ],
+        tags: ["LLM", "Instruction Tuning", "User Profiling", "Cross-domain", "Ads RecSys"] },
+      { venue: "Kuaishou · 2023–", scene: "Short-video recommendation, ads, search", stack: "Multimodal representation",
+        title: "Continuous Multimodal Representation of Video Style & Quality", role: "Project Owner · Dec 2023 – Present",
+        goal: "Style and quality signals are sparse and biased, making personalized modeling hard. Proposed the first multimodal embedding for quality understanding in the industry and co-modeled style preference with the recommender.",
+        work: [
+          "Multi-objective learning on an encoder-decoder architecture to learn continuous multimodal representations in the quality / style feature space",
+          "Designed retrieval-back metrics (content diversity & style consistency) to quantitatively prove convergence to the style space and genuine information gain",
+          "Jointly modeled user style preference with ranking, achieving significant confident gains in next-day retention and other core metrics"
+        ],
+        tags: ["Multimodal Embedding", "Encoder-Decoder", "Representation Learning", "Retention"] },
+      { venue: "Kuaishou · 2021–23", scene: "Short-video & returning-user recommendation", stack: "Multi-channel retrieval",
+        title: "Fine-grained Video Tagging via Multi-channel Retrieval", role: "Project Owner · Oct 2021 – Nov 2023",
+        goal: "Video classification was too coarse for the fine-grained content understanding the business required.",
+        work: [
+          "Combined multimodal generation, classification, retrieval and text extraction into a multi-channel tagging system for fine-grained topic understanding",
+          "Delivered DAU and other core metric gains across Kuaishou recommendation, returning-user and push scenarios"
+        ],
+        tags: ["Multi-channel Retrieval", "Multimodal Classification", "Retrieval", "Video Tagging", "DAU"] }
+    ],
+    research: [
+      { when: "Mar 2013 – May 2013", org: "View Morphing / 3D Reconstruction", role: "Northwestern University — course project",
+        bullets: ["Designed a 3-step algorithm that synthesizes a brand-new viewpoint of an object from several input views", "Implemented in MATLAB and validated on multiple image sets with highly acceptable results"] },
+      { when: "Mar 2013 – May 2013", org: "Local Band-limited Contrast on Texture Images", role: "Northwestern University — master's project",
+        bullets: ["Reproduced the contrast theory of Eli Peli's “Local Band-limited Contrast in Complex Images” in MATLAB", "Tested the theory across image categories and recorded per-band average contrast histograms", "Found a correlation between contrast distribution and texture characteristics across texture images"] },
+      { when: "Sep 2011 – May 2012", org: "Marine Plankton Image Classification", role: "Zhejiang University — bachelor's thesis",
+        bullets: ["Classified plankton images with optimized feature detection, feature analysis and classifiers", "Reached 91.3% recognition accuracy, outperforming conventional PCA-based baselines"] }
+    ],
+    skills: [
+      { h: "Research", t: ["Multimodal Understanding", "Video Understanding", "Representation Learning", "LLM × RecSys", "Computer Vision", "Detection & Tracking"] },
+      { h: "Engineering", t: ["Python", "C++", "MATLAB", "OpenCV"] },
+      { h: "Languages", t: ["Chinese (native)", "English (fluent)"] }
+    ]
+  }
+};
+
+const LABELS = {
+  zh: { scene: "场景", stack: "技术", goal: "背景与目标", work: "主要工作" },
+  en: { scene: "Scope", stack: "Stack", goal: "Goal", work: "Highlights" }
+};
+
+const el = (tag, cls, html) => {
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (html !== undefined) n.innerHTML = html;
+  return n;
+};
+const esc = s => String(s).replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+
+function renderList(host, items) {
+  host.innerHTML = "";
+  items.forEach(it => {
+    const li = el("li");
+    li.append(el("div", "when", esc(it.when)));
+    const what = el("div", "what");
+    what.append(el("div", "org", esc(it.org) + (it.now ? '<span class="badge-now">NOW</span>' : "")));
+    what.append(el("div", "role", esc(it.role)));
+    if (it.bullets && it.bullets.length) {
+      const ul = el("ul");
+      it.bullets.forEach(b => ul.append(el("li", null, esc(b))));
+      what.append(ul);
+    }
+    li.append(what);
+    host.append(li);
+  });
+}
+
+function renderProjects(host, items, lab) {
+  host.innerHTML = "";
+  items.forEach(p => {
+    const row = el("div", "proj");
+
+    const box = el("div", "pbox");
+    box.append(el("div", "pvenue", esc(p.venue)));
+    box.append(el("div", "pmeta",
+      `<div><span class="k">${lab.scene}</span><br>${esc(p.scene)}</div>` +
+      `<div><span class="k">${lab.stack}</span><br>${esc(p.stack)}</div>`));
+    row.append(box);
+
+    const body = el("div");
+    body.append(el("h3", null, esc(p.title)));
+    body.append(el("div", "prole", esc(p.role)));
+    body.append(el("p", "pgoal", `<strong>${lab.goal}：</strong>${esc(p.goal)}`));
+    const ul = el("ul");
+    p.work.forEach(w => ul.append(el("li", null, esc(w))));
+    body.append(ul);
+    const chips = el("div", "chips");
+    p.tags.forEach(t => chips.append(el("span", "chip", esc(t))));
+    body.append(chips);
+    row.append(body);
+
+    host.append(row);
+  });
+}
+
+function render(lang) {
+  const d = DATA[lang];
+  document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+
+  document.querySelectorAll("[data-t]").forEach(n => {
+    let v = d;
+    n.dataset.t.split(".").forEach(k => { v = v[k]; });
+    n.innerHTML = v;
+  });
+
+  const about = document.getElementById("aboutBody");
+  about.innerHTML = "";
+  d.about.forEach(p => about.append(el("p", null, p)));
+
+  const chips = document.getElementById("chips");
+  chips.innerHTML = "";
+  d.chips.forEach(c => chips.append(el("span", "chip", esc(c))));
+
+  const news = document.getElementById("newsList");
+  news.innerHTML = "";
+  d.news.forEach(n => news.append(el("li", null, `<span class="date">${esc(n.date)}</span>${esc(n.t)}`)));
+
+  renderList(document.getElementById("eduList"), d.education);
+  renderList(document.getElementById("expList"), d.experience);
+  renderProjects(document.getElementById("projList"), d.projects, LABELS[lang]);
+  renderList(document.getElementById("resList"), d.research);
+
+  const sk = document.getElementById("skillList");
+  sk.innerHTML = "";
+  d.skills.forEach(s => {
+    const box = el("div", "skillbox");
+    box.append(el("h3", null, esc(s.h)));
+    const chips = el("div", "chips");
+    s.t.forEach(t => chips.append(el("span", "chip", esc(t))));
+    box.append(chips);
+    sk.append(box);
+  });
+
+  document.getElementById("langBtn").textContent = lang === "zh" ? "EN" : "中文";
+  document.title = lang === "zh" ? "苏贝贝 (Beibei Su) - 个人主页" : "Beibei Su (苏贝贝) - Homepage";
+}
+
+// contact details are assembled at runtime to keep plain text out of the markup
+const mail = MAIL.join("@");
+document.getElementById("mailLink").href = "mailto:" + mail;
+document.getElementById("mailText").textContent = mail;
+document.getElementById("cvLink").href =
+  "mailto:" + mail + "?subject=" + encodeURIComponent("Résumé request / 简历索取");
+
+const savedTheme = localStorage.getItem("theme") ||
+  (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+document.documentElement.dataset.theme = savedTheme;
+document.getElementById("themeBtn").addEventListener("click", () => {
+  const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = next;
+  localStorage.setItem("theme", next);
+});
+
+let lang = localStorage.getItem("lang") ||
+  (navigator.language.toLowerCase().startsWith("zh") ? "zh" : "en");
+document.getElementById("langBtn").addEventListener("click", () => {
+  lang = lang === "zh" ? "en" : "zh";
+  localStorage.setItem("lang", lang);
+  render(lang);
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+render(lang);
+</script>
+</body>
+</html>
